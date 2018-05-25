@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49283920B848A8002852CC /* OAuthClient.swift */; };
+		0C49283D20B84CED002852CC /* StreamingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49283C20B84CED002852CC /* StreamingService.swift */; };
+		0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0D820B6F4A40031512C /* AppDelegate.swift */; };
+		0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DA20B6F4A40031512C /* ViewController.swift */; };
+		0CD2F0DE20B6F4A40031512C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DC20B6F4A40031512C /* Main.storyboard */; };
+		0CD2F0E020B6F4A60031512C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DF20B6F4A60031512C /* Assets.xcassets */; };
+		0CD2F0E320B6F4A60031512C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD2F0E120B6F4A60031512C /* LaunchScreen.storyboard */; };
+		0CD2F0EE20B6F4A60031512C /* TwiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0ED20B6F4A60031512C /* TwiseTests.swift */; };
+		17F53068E11F63962D9EF49B /* Pods_Twise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F627B3BAA419A743F8CBC82A /* Pods_Twise.framework */; };
+		6EA51176970E959060FBF1A1 /* Pods_TwiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB6E7D72502EDDADE0DB3C6 /* Pods_TwiseTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0CD2F0EA20B6F4A60031512C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0CD2F0CD20B6F4A40031512C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CD2F0D420B6F4A40031512C;
+			remoteInfo = Twise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0C49283920B848A8002852CC /* OAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthClient.swift; sourceTree = "<group>"; };
+		0C49283C20B84CED002852CC /* StreamingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingService.swift; sourceTree = "<group>"; };
+		0CD2F0D520B6F4A40031512C /* Twise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twise.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CD2F0D820B6F4A40031512C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0CD2F0DA20B6F4A40031512C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CD2F0DD20B6F4A40031512C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0CD2F0DF20B6F4A60031512C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0CD2F0E220B6F4A60031512C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0CD2F0E420B6F4A60031512C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CD2F0E920B6F4A60031512C /* TwiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CD2F0ED20B6F4A60031512C /* TwiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiseTests.swift; sourceTree = "<group>"; };
+		0CD2F0EF20B6F4A60031512C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EB51CD7F66831BA3E92B92E /* Pods-TwiseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwiseTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwiseTests/Pods-TwiseTests.release.xcconfig"; sourceTree = "<group>"; };
+		75CDDE516870C10B860FBD17 /* Pods-Twise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Twise/Pods-Twise.debug.xcconfig"; sourceTree = "<group>"; };
+		89330BD252538E2A5BA2B851 /* Pods-TwiseTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwiseTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwiseTests/Pods-TwiseTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C8C293CA450923EA1BFA5B18 /* Pods-Twise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twise.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twise/Pods-Twise.release.xcconfig"; sourceTree = "<group>"; };
+		DCB6E7D72502EDDADE0DB3C6 /* Pods_TwiseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwiseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F627B3BAA419A743F8CBC82A /* Pods_Twise.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twise.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0CD2F0D220B6F4A40031512C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17F53068E11F63962D9EF49B /* Pods_Twise.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CD2F0E620B6F4A60031512C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EA51176970E959060FBF1A1 /* Pods_TwiseTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C49283820B8485D002852CC /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				0C49283920B848A8002852CC /* OAuthClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		0C49283B20B84BBE002852CC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0C49283C20B84CED002852CC /* StreamingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0CD2F0CC20B6F4A40031512C = {
+			isa = PBXGroup;
+			children = (
+				0CD2F0D720B6F4A40031512C /* Twise */,
+				0CD2F0EC20B6F4A60031512C /* TwiseTests */,
+				0CD2F0D620B6F4A40031512C /* Products */,
+				1A7C8392B0F50FA7C9D33FF7 /* Pods */,
+				BB457CA74C4FCBB560AA3E2C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0CD2F0D620B6F4A40031512C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0CD2F0D520B6F4A40031512C /* Twise.app */,
+				0CD2F0E920B6F4A60031512C /* TwiseTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0CD2F0D720B6F4A40031512C /* Twise */ = {
+			isa = PBXGroup;
+			children = (
+				0C49283B20B84BBE002852CC /* Services */,
+				0C49283820B8485D002852CC /* Clients */,
+				0CD2F0D820B6F4A40031512C /* AppDelegate.swift */,
+				0CD2F0DA20B6F4A40031512C /* ViewController.swift */,
+				0CD2F0DC20B6F4A40031512C /* Main.storyboard */,
+				0CD2F0DF20B6F4A60031512C /* Assets.xcassets */,
+				0CD2F0E120B6F4A60031512C /* LaunchScreen.storyboard */,
+				0CD2F0E420B6F4A60031512C /* Info.plist */,
+			);
+			path = Twise;
+			sourceTree = "<group>";
+		};
+		0CD2F0EC20B6F4A60031512C /* TwiseTests */ = {
+			isa = PBXGroup;
+			children = (
+				0CD2F0ED20B6F4A60031512C /* TwiseTests.swift */,
+				0CD2F0EF20B6F4A60031512C /* Info.plist */,
+			);
+			path = TwiseTests;
+			sourceTree = "<group>";
+		};
+		1A7C8392B0F50FA7C9D33FF7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75CDDE516870C10B860FBD17 /* Pods-Twise.debug.xcconfig */,
+				C8C293CA450923EA1BFA5B18 /* Pods-Twise.release.xcconfig */,
+				89330BD252538E2A5BA2B851 /* Pods-TwiseTests.debug.xcconfig */,
+				0EB51CD7F66831BA3E92B92E /* Pods-TwiseTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB457CA74C4FCBB560AA3E2C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F627B3BAA419A743F8CBC82A /* Pods_Twise.framework */,
+				DCB6E7D72502EDDADE0DB3C6 /* Pods_TwiseTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0CD2F0D420B6F4A40031512C /* Twise */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CD2F0F220B6F4A60031512C /* Build configuration list for PBXNativeTarget "Twise" */;
+			buildPhases = (
+				E134A325A26EF71BDDCB0E12 /* [CP] Check Pods Manifest.lock */,
+				0CD2F0D120B6F4A40031512C /* Sources */,
+				0CD2F0D220B6F4A40031512C /* Frameworks */,
+				0CD2F0D320B6F4A40031512C /* Resources */,
+				78466888999AFA24DFDE3304 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Twise;
+			productName = Twise;
+			productReference = 0CD2F0D520B6F4A40031512C /* Twise.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0CD2F0E820B6F4A60031512C /* TwiseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0CD2F0F520B6F4A60031512C /* Build configuration list for PBXNativeTarget "TwiseTests" */;
+			buildPhases = (
+				02B3360680490BCEA85AD57C /* [CP] Check Pods Manifest.lock */,
+				0CD2F0E520B6F4A60031512C /* Sources */,
+				0CD2F0E620B6F4A60031512C /* Frameworks */,
+				0CD2F0E720B6F4A60031512C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0CD2F0EB20B6F4A60031512C /* PBXTargetDependency */,
+			);
+			name = TwiseTests;
+			productName = TwiseTests;
+			productReference = 0CD2F0E920B6F4A60031512C /* TwiseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0CD2F0CD20B6F4A40031512C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Daya Inc";
+				TargetAttributes = {
+					0CD2F0D420B6F4A40031512C = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					0CD2F0E820B6F4A60031512C = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 0CD2F0D420B6F4A40031512C;
+					};
+				};
+			};
+			buildConfigurationList = 0CD2F0D020B6F4A40031512C /* Build configuration list for PBXProject "Twise" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0CD2F0CC20B6F4A40031512C;
+			productRefGroup = 0CD2F0D620B6F4A40031512C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0CD2F0D420B6F4A40031512C /* Twise */,
+				0CD2F0E820B6F4A60031512C /* TwiseTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0CD2F0D320B6F4A40031512C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CD2F0E320B6F4A60031512C /* LaunchScreen.storyboard in Resources */,
+				0CD2F0E020B6F4A60031512C /* Assets.xcassets in Resources */,
+				0CD2F0DE20B6F4A40031512C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CD2F0E720B6F4A60031512C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02B3360680490BCEA85AD57C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TwiseTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78466888999AFA24DFDE3304 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Twise/Pods-Twise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MutableDataScanner/MutableDataScanner.framework",
+				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MutableDataScanner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Twise/Pods-Twise-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E134A325A26EF71BDDCB0E12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Twise-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0CD2F0D120B6F4A40031512C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C49283D20B84CED002852CC /* StreamingService.swift in Sources */,
+				0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */,
+				0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */,
+				0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0CD2F0E520B6F4A60031512C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CD2F0EE20B6F4A60031512C /* TwiseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0CD2F0EB20B6F4A60031512C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CD2F0D420B6F4A40031512C /* Twise */;
+			targetProxy = 0CD2F0EA20B6F4A60031512C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0CD2F0DC20B6F4A40031512C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CD2F0DD20B6F4A40031512C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0CD2F0E120B6F4A60031512C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CD2F0E220B6F4A60031512C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0CD2F0F020B6F4A60031512C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0CD2F0F120B6F4A60031512C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0CD2F0F320B6F4A60031512C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75CDDE516870C10B860FBD17 /* Pods-Twise.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M76BL8Q5AB;
+				INFOPLIST_FILE = Twise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daya.Twise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0CD2F0F420B6F4A60031512C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8C293CA450923EA1BFA5B18 /* Pods-Twise.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M76BL8Q5AB;
+				INFOPLIST_FILE = Twise/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daya.Twise;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0CD2F0F620B6F4A60031512C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89330BD252538E2A5BA2B851 /* Pods-TwiseTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M76BL8Q5AB;
+				INFOPLIST_FILE = TwiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daya.TwiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twise.app/Twise";
+			};
+			name = Debug;
+		};
+		0CD2F0F720B6F4A60031512C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EB51CD7F66831BA3E92B92E /* Pods-TwiseTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M76BL8Q5AB;
+				INFOPLIST_FILE = TwiseTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.daya.TwiseTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Twise.app/Twise";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0CD2F0D020B6F4A40031512C /* Build configuration list for PBXProject "Twise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CD2F0F020B6F4A60031512C /* Debug */,
+				0CD2F0F120B6F4A60031512C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0CD2F0F220B6F4A60031512C /* Build configuration list for PBXNativeTarget "Twise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CD2F0F320B6F4A60031512C /* Debug */,
+				0CD2F0F420B6F4A60031512C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0CD2F0F520B6F4A60031512C /* Build configuration list for PBXNativeTarget "TwiseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CD2F0F620B6F4A60031512C /* Debug */,
+				0CD2F0F720B6F4A60031512C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0CD2F0CD20B6F4A40031512C /* Project object */;
+}

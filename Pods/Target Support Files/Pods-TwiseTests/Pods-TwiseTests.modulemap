@@ -1,0 +1,6 @@
+framework module Pods_TwiseTests {
+  umbrella header "Pods-TwiseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_Twise {
+  umbrella header "Pods-Twise-umbrella.h"
+
+  export *
+  module * { export * }
+}
