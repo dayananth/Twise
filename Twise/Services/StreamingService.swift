@@ -24,7 +24,7 @@ class StreamingService: NSObject {
     /// Request passed in
     let originalRequest: URLRequest
 
-    /// Streaming API Delegate
+    /// Streaming Service Delegate
     let delegate: StreamingDelegate
 
     /**

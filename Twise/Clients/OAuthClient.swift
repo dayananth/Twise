@@ -28,16 +28,20 @@ enum Method: String {
     }
 }
 
+enum BaseURL {
+    static let twitterStreamBaseURL = "https://stream.twitter.com"
+    static let twitterAPIBaseURL = "https://api.twitter.com/"
+}
 
 protocol OAuthClientProtocol {
     /// Returns request with OAuth Header set and the given parameters added
     ///
     /// - Parameters:
     ///   - method: REST Methods GET, POST, UPDATE, etc.
-    ///   - baseURL: the baseURL to hit the service
+    ///   - requestURL: the baseURL to hit the service
     ///   - parameters: parameters to be passed to the backend service
     /// - Returns: returns URLRequest
-    func constructRequest(_ method: Method, baseURL: String, parameters: Dictionary<String, String>) -> URLRequest
+    func constructRequest(_ method: Method, requestURL: String, parameters: Dictionary<String, String>) -> URLRequest
 
 }
 
@@ -67,8 +71,8 @@ class OAuthClient: OAuthClientProtocol {
     }
 
 
-    func constructRequest(_ method: Method, baseURL: String, parameters: Dictionary<String, String>) -> URLRequest{
-        let url = URL(string: baseURL)!
+    func constructRequest(_ method: Method, requestURL: String, parameters: Dictionary<String, String>) -> URLRequest{
+        let url = URL(string: requestURL)!
         let authorization = oAuthCredential.authorizationHeader(method: method.oAuthSwiftValue, url: url, parameters: parameters)
         let headers = ["Authorization": authorization]
 
@@ -77,9 +81,9 @@ class OAuthClient: OAuthClientProtocol {
             request = try OAuthSwiftHTTPRequest.makeRequest(url:
                 url, method: method.oAuthSwiftValue, headers: headers, parameters: parameters, dataEncoding: String.Encoding.utf8) as URLRequest
         } catch let error as NSError {
-            fatalError("TwitterAPIOAuthClient#request invalid request error:\(error.description)")
+            fatalError("APIOAuthClient#request invalid request error:\(error.description)")
         } catch {
-            fatalError("TwitterAPIOAuthClient#request invalid request unknwon error")
+            fatalError("APIOAuthClient#request invalid request unknwon error")
         }
 
         return request

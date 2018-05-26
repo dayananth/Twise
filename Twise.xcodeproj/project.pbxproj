@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49283920B848A8002852CC /* OAuthClient.swift */; };
 		0C49283D20B84CED002852CC /* StreamingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49283C20B84CED002852CC /* StreamingService.swift */; };
+		0CAFD6D220B99B6400F4D344 /* TwitterStreamingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D120B99B6400F4D344 /* TwitterStreamingService.swift */; };
+		0CAFD6D420B99D1700F4D344 /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D320B99D1700F4D344 /* AuthenticationService.swift */; };
+		0CAFD6D720B9A41900F4D344 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D620B9A41900F4D344 /* FilterModel.swift */; };
+		0CAFD6DA20B9AAB100F4D344 /* TwitterStreamingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D920B9AAB100F4D344 /* TwitterStreamingDataSource.swift */; };
+		0CAFD6DD20B9ABFB00F4D344 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */; };
 		0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0D820B6F4A40031512C /* AppDelegate.swift */; };
 		0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DA20B6F4A40031512C /* ViewController.swift */; };
 		0CD2F0DE20B6F4A40031512C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DC20B6F4A40031512C /* Main.storyboard */; };
@@ -32,6 +37,11 @@
 /* Begin PBXFileReference section */
 		0C49283920B848A8002852CC /* OAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthClient.swift; sourceTree = "<group>"; };
 		0C49283C20B84CED002852CC /* StreamingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingService.swift; sourceTree = "<group>"; };
+		0CAFD6D120B99B6400F4D344 /* TwitterStreamingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamingService.swift; sourceTree = "<group>"; };
+		0CAFD6D320B99D1700F4D344 /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
+		0CAFD6D620B9A41900F4D344 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		0CAFD6D920B9AAB100F4D344 /* TwitterStreamingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamingDataSource.swift; sourceTree = "<group>"; };
+		0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		0CD2F0D520B6F4A40031512C /* Twise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD2F0D820B6F4A40031512C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD2F0DA20B6F4A40031512C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,8 +92,34 @@
 			isa = PBXGroup;
 			children = (
 				0C49283C20B84CED002852CC /* StreamingService.swift */,
+				0CAFD6D120B99B6400F4D344 /* TwitterStreamingService.swift */,
+				0CAFD6D320B99D1700F4D344 /* AuthenticationService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		0CAFD6D520B9A3F400F4D344 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0CAFD6D620B9A41900F4D344 /* FilterModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0CAFD6D820B9AA8E00F4D344 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				0CAFD6D920B9AAB100F4D344 /* TwitterStreamingDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		0CAFD6DB20B9ABD400F4D344 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		0CD2F0CC20B6F4A40031512C = {
@@ -109,6 +145,9 @@
 		0CD2F0D720B6F4A40031512C /* Twise */ = {
 			isa = PBXGroup;
 			children = (
+				0CAFD6DB20B9ABD400F4D344 /* ViewModels */,
+				0CAFD6D820B9AA8E00F4D344 /* DataSource */,
+				0CAFD6D520B9A3F400F4D344 /* Models */,
 				0C49283B20B84BBE002852CC /* Services */,
 				0C49283820B8485D002852CC /* Clients */,
 				0CD2F0D820B6F4A40031512C /* AppDelegate.swift */,
@@ -275,13 +314,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Twise/Pods-Twise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MutableDataScanner/MutableDataScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MutableDataScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -314,9 +357,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C49283D20B84CED002852CC /* StreamingService.swift in Sources */,
+				0CAFD6DD20B9ABFB00F4D344 /* FilterViewModel.swift in Sources */,
 				0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */,
+				0CAFD6D220B99B6400F4D344 /* TwitterStreamingService.swift in Sources */,
+				0CAFD6D420B99D1700F4D344 /* AuthenticationService.swift in Sources */,
 				0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */,
 				0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */,
+				0CAFD6D720B9A41900F4D344 /* FilterModel.swift in Sources */,
+				0CAFD6DA20B9AAB100F4D344 /* TwitterStreamingDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

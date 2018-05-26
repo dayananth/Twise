@@ -8,6 +8,8 @@
 
 import UIKit
 import OAuthSwift
+import SwiftyJSON
+
 
 class ViewController: UIViewController {
 
@@ -61,7 +63,14 @@ class ViewController: UIViewController {
         if !credential.oauthTokenSecret.isEmpty {
             message += "\n\noauth_token_secret:\(credential.oauthTokenSecret)"
         }
-        self.showAlertView(title: name ?? "Service", message: message)
+        let client = OAuthClient(consumerKey: consumerData["consumerKey"]!, consumerSecret: consumerData["consumerSecret"]!, accessToken: credential.oauthToken, accessTokenSecret: credential.oauthTokenSecret)
+        let streamingRequest = StreamingService(client.constructRequest(.POST, requestURL: "https://stream.twitter.com/1.1/statuses/filter.json", parameters: ["track":"twitter"]))
+//        self.showAlertView(title: name ?? "Service", message: message)
+
+        _ = streamingRequest.progress { (data) in
+            let json = try! JSON(data: data)
+            print(json)
+        }.start()
     }
 
     func showAlertView(title: String, message: String) {

@@ -8,6 +8,8 @@ target 'Twise' do
   # Pods for Twise
   pod 'OAuthSwift', '~> 1.2.0'
   pod 'MutableDataScanner'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'KeychainAccess'
 
   target 'TwiseTests' do
     inherit! :search_paths
