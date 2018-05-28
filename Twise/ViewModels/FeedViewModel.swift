@@ -12,7 +12,6 @@ class FeedViewModel {
     var twitterStreamingDatasource: TwitterStreamingDataSourceProtocol
     let router: Router
     let feedLimit = 5
-//    let backgroundColor = UIColor(red: 240/255, green: 242/255, blue: 245/255, alpha: 1.0)
     var filterViewModelsBinder: ViewModelBinder<[FilterViewModel]>?
 
     let numberOfSections = 1
@@ -30,7 +29,8 @@ class FeedViewModel {
     }
 
     func viewLoaded() {
-        self.twitterStreamingDatasource.fetchStream(trackQuery: "twitter")
+        let TEST_TRENDING_STRING = "twitter"
+        self.twitterStreamingDatasource.fetchStream(trackQuery: TEST_TRENDING_STRING)
     }
 
     func processNewFilterViewModels(newFilterViewModels: [FilterViewModel]) {

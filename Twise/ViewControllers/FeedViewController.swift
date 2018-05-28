@@ -65,8 +65,8 @@ class FeedViewController: UIViewController {
 
 
         let logoutButton = UIButton()
-        logoutButton.setTitle("Logout", for: .normal)
-        logoutButton.setTitleColor(UIColor.blue, for: .normal)
+        logoutButton.setTitle("LOGOUT", for: .normal)
+        logoutButton.setTitleColor(UIColor.white, for: .normal)
         logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
         searchBoxContainer.addSubview(logoutButton)
