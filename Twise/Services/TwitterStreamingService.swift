@@ -40,7 +40,6 @@ class TwitterStreamingService {
         }
         let request = authenticatedClient.constructRequest(.POST, requestURL: BaseURL.twitterStreamBaseURL + "/1.1/statuses/filter.json", parameters: parameters)
 
-        _ = streamingService?.closeConnection()
         streamingService = StreamingService(request).start()
         _ = streamingService?.progress({ (data) in
             do {
@@ -83,6 +82,7 @@ class TwitterStreamingService {
     }
 
     func throttledStreaming(parameters: Dictionary<String, String>) {
+        _ = streamingService?.closeConnection()
         startStreaming(parameters: parameters)
         throttle()
     }

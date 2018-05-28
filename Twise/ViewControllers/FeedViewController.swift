@@ -14,6 +14,7 @@ class FeedViewController: UIViewController {
     private let collectionViewFlowLayout: UICollectionViewFlowLayout
     private let searchBox: UITextField
     private var feedViewModel: FeedViewModel
+    private let searchBoxContainer = UIView()
 
     init(feedViewModel: FeedViewModel) {
         collectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -32,7 +33,7 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(red: 240/255, green: 242/255, blue: 245/255, alpha: 1.0)
+        self.view.backgroundColor = UIColor(red: 102/255, green: 153/255, blue: 255/255, alpha: 1.0)
         self.view.translatesAutoresizingMaskIntoConstraints = false
         setupSearchBox()
         setupFeedListView()
@@ -40,16 +41,44 @@ class FeedViewController: UIViewController {
     }
 
     private func setupSearchBox() {
-        self.view.addSubview(searchBox)
+        self.view.addSubview(searchBoxContainer)
+        searchBoxContainer.addSubview(searchBox)
+        searchBoxContainer.backgroundColor = UIColor(red: 102/255, green: 153/255, blue: 255/255, alpha: 1.0)
+        searchBoxContainer.translatesAutoresizingMaskIntoConstraints = false
         searchBox.backgroundColor = UIColor.white
         searchBox.translatesAutoresizingMaskIntoConstraints = false
+        searchBox.delegate = self
+        searchBox.placeholder = "Search a keyword"
+
         NSLayoutConstraint.activate([
-            searchBox.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 8.0),
-            searchBox.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -8.0),
-            searchBox.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            searchBox.heightAnchor.constraint(equalToConstant: 40.0)
+            searchBoxContainer.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            searchBoxContainer.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            searchBoxContainer.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            searchBoxContainer.heightAnchor.constraint(equalToConstant: 60.0)
+            ])
+
+        NSLayoutConstraint.activate([
+            searchBox.leadingAnchor.constraint(equalTo: searchBoxContainer.leadingAnchor, constant: 8.0),
+            searchBox.topAnchor.constraint(equalTo: searchBoxContainer.safeAreaLayoutGuide.topAnchor, constant: 8.0),
+            searchBox.bottomAnchor.constraint(equalTo: searchBoxContainer.bottomAnchor, constant: -8.0)
         ])
-//        searchBox.becomeFirstResponder()
+
+
+        let logoutButton = UIButton()
+        logoutButton.setTitle("Logout", for: .normal)
+        logoutButton.setTitleColor(UIColor.blue, for: .normal)
+        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        logoutButton.translatesAutoresizingMaskIntoConstraints = false
+        searchBoxContainer.addSubview(logoutButton)
+        logoutButton.addTarget(self, action: #selector(FeedViewController.didTapLogout), for: .touchUpInside)
+
+        NSLayoutConstraint.activate([
+            logoutButton.leadingAnchor.constraint(equalTo: searchBox.trailingAnchor, constant: 8.0),
+            logoutButton.trailingAnchor.constraint(equalTo: searchBoxContainer.trailingAnchor, constant: -8.0),
+            logoutButton.topAnchor.constraint(equalTo: searchBoxContainer.safeAreaLayoutGuide.topAnchor, constant: 8.0),
+            logoutButton.bottomAnchor.constraint(equalTo: searchBoxContainer.bottomAnchor, constant: -8.0)
+        ])
+
     }
 
     private func setupFeedListView() {
@@ -67,20 +96,16 @@ class FeedViewController: UIViewController {
     private func setupFeedListConstraints() {
         feedListView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 8.0).isActive = true
         feedListView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -8.0).isActive = true
-        feedListView.topAnchor.constraint(equalTo: self.searchBox.bottomAnchor, constant: 5.0).isActive = true
+        feedListView.topAnchor.constraint(equalTo: self.searchBoxContainer.bottomAnchor, constant: 5.0).isActive = true
         feedListView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 
     private func updateCollectionView(indexPathsTodelete: [IndexPath], indexPathsToInsert: [IndexPath]) {
-//        self.feedListView.insertItems(at: indexPathsToInsert)
-//        self.feedListView.performBatchUpdates({
-//            self.feedListView.deleteItems(at: indexPathsTodelete)
-//        }) { _ in
-//            self.feedListView.performBatchUpdates({
-//                self.feedListView.insertItems(at: indexPathsToInsert)
-//            }, completion: nil)
-//        }
         self.feedListView.reloadData()
+    }
+
+    @objc private func didTapLogout() {
+        feedViewModel.didTapLogout()
     }
 
 
@@ -116,5 +141,15 @@ extension FeedViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
+extension FeedViewController: UITextFieldDelegate {
+
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let searchText = textField.text {
+            textField.resignFirstResponder()
+            self.feedViewModel.didSearchKeywordUpdate(searchText)
+        }
+        return true
+    }
+}
 
 

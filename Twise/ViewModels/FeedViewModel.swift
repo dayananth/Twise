@@ -58,4 +58,14 @@ class FeedViewModel {
         self.onNewFilterViewModelsArrived?(indexPathsToDelete, indexPathsToInsert)
     }
 
+    func didSearchKeywordUpdate(_ newSearchText: String) {
+        self.filterViewModels = []
+        self.onNewFilterViewModelsArrived?([], [])
+        self.twitterStreamingDatasource.fetchStream(trackQuery: newSearchText)
+    }
+
+    func didTapLogout() {
+        router.logout()
+    }
+
 }

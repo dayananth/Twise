@@ -62,8 +62,8 @@ class Router {
         case .home:
             self.window?.rootViewController = feedViewController()
             self.window?.makeKeyAndVisible()
-        default:
-            return
+        case .logout:
+            logout()
         }
     }
 
@@ -80,5 +80,10 @@ class Router {
 
         let feedViewController = FeedViewController(feedViewModel: feedViewModel)
         return feedViewController
+    }
+
+    func logout() {
+        authenticationService.removeAccessTokens()
+        self.route(route: .login)
     }
 }
