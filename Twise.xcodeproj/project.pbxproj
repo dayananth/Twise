@@ -19,6 +19,8 @@
 		0CAFD6D720B9A41900F4D344 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D620B9A41900F4D344 /* FilterModel.swift */; };
 		0CAFD6DA20B9AAB100F4D344 /* TwitterStreamingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D920B9AAB100F4D344 /* TwitterStreamingDataSource.swift */; };
 		0CAFD6DD20B9ABFB00F4D344 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */; };
+		0CCC198120BC514C001B0E16 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC198020BC514C001B0E16 /* FeedViewModel.swift */; };
+		0CCC198420BC529A001B0E16 /* ViewModelBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC198320BC529A001B0E16 /* ViewModelBinder.swift */; };
 		0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0D820B6F4A40031512C /* AppDelegate.swift */; };
 		0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DA20B6F4A40031512C /* ViewController.swift */; };
 		0CD2F0DE20B6F4A40031512C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DC20B6F4A40031512C /* Main.storyboard */; };
@@ -52,6 +54,8 @@
 		0CAFD6D620B9A41900F4D344 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		0CAFD6D920B9AAB100F4D344 /* TwitterStreamingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamingDataSource.swift; sourceTree = "<group>"; };
 		0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		0CCC198020BC514C001B0E16 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		0CCC198320BC529A001B0E16 /* ViewModelBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinder.swift; sourceTree = "<group>"; };
 		0CD2F0D520B6F4A40031512C /* Twise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD2F0D820B6F4A40031512C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD2F0DA20B6F4A40031512C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,8 +158,17 @@
 			children = (
 				0C33622F20BB02E600C11DEC /* LoginViewModel.swift */,
 				0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */,
+				0CCC198020BC514C001B0E16 /* FeedViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0CCC198220BC527B001B0E16 /* ViewModelBinder */ = {
+			isa = PBXGroup;
+			children = (
+				0CCC198320BC529A001B0E16 /* ViewModelBinder.swift */,
+			);
+			path = ViewModelBinder;
 			sourceTree = "<group>";
 		};
 		0CD2F0CC20B6F4A40031512C = {
@@ -181,6 +194,7 @@
 		0CD2F0D720B6F4A40031512C /* Twise */ = {
 			isa = PBXGroup;
 			children = (
+				0CCC198220BC527B001B0E16 /* ViewModelBinder */,
 				0C33623320BB7A4B00C11DEC /* Views */,
 				0C33622B20BB026F00C11DEC /* ViewControllers */,
 				0C33622720B9BC7100C11DEC /* Middleware */,
@@ -395,11 +409,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CCC198420BC529A001B0E16 /* ViewModelBinder.swift in Sources */,
 				0C33623520BB7AC600C11DEC /* FeedView.swift in Sources */,
 				0C49283D20B84CED002852CC /* StreamingService.swift in Sources */,
 				0CAFD6DD20B9ABFB00F4D344 /* FilterViewModel.swift in Sources */,
 				0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */,
 				0CAFD6D220B99B6400F4D344 /* TwitterStreamingService.swift in Sources */,
+				0CCC198120BC514C001B0E16 /* FeedViewModel.swift in Sources */,
 				0CAFD6D420B99D1700F4D344 /* AuthenticationService.swift in Sources */,
 				0C33622920B9BCC400C11DEC /* Middleware.swift in Sources */,
 				0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */,

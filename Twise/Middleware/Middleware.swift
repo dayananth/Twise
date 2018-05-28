@@ -60,7 +60,7 @@ class Router {
             self.window?.rootViewController = loginViewController()
             self.window?.makeKeyAndVisible()
         case .home:
-            self.window?.rootViewController = FeedViewController()
+            self.window?.rootViewController = feedViewController()
             self.window?.makeKeyAndVisible()
         default:
             return
@@ -71,5 +71,14 @@ class Router {
         let loginViewModel = LoginViewModel(authenticationService: self.authenticationService, router: self)
         let loginViewController = LoginViewController(viewModel: loginViewModel)
         return loginViewController
+    }
+
+    func feedViewController() -> UIViewController {
+        let twitterStreamingService = TwitterStreamingService(authenticationService: self.authenticationService)
+        let twitterStreamingDatasource = TwitterStreamingDataSource(twitterStreamingService: twitterStreamingService)
+        let feedViewModel = FeedViewModel(twitterStreamingDatasource: twitterStreamingDatasource, router: self)
+
+        let feedViewController = FeedViewController(feedViewModel: feedViewModel)
+        return feedViewController
     }
 }

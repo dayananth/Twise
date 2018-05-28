@@ -16,6 +16,6 @@ struct FilterModel {
 
     init(json: JSON) {
         self.text = json["text"].string ?? ""
-        self.imageURL = json["entities"]["media"]["media_url_https"].string ?? ""
+        self.imageURL = json["entities"]["media"][0]["media_url_https"].string ?? ""
     }
 }

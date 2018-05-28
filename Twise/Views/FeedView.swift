@@ -29,10 +29,12 @@ class FeedView: UICollectionViewCell {
     }
 
     func setupUI() {
+        backgroundColor = .white
         translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         textLabel.translatesAutoresizingMaskIntoConstraints = false
+        textLabel.numberOfLines = 0
         addSubview(imageView)
         addSubview(textLabel)
         textLabel.text = "Loream and ipsum"
@@ -40,6 +42,8 @@ class FeedView: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8.0),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0),
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8.0),
+            imageView.heightAnchor.constraint(equalToConstant: 84.0),
+            imageView.widthAnchor.constraint(equalToConstant: 84.0),
 
             textLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 8.0),
             textLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8.0),

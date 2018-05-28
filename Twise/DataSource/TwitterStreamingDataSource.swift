@@ -9,26 +9,42 @@
 typealias TwitterStreamingDataSourceCallback = ([FilterViewModel]) -> Void
 
 protocol TwitterStreamingDataSourceProtocol {
-    func fetchStream(trackQuery: String, twitterStreamingDataSourceCallback: @escaping TwitterStreamingDataSourceCallback)
+    var datasourceCallback: TwitterStreamingDataSourceCallback? {get set}
+
+    func fetchStream(trackQuery: String)
 }
 
-class TwitterStreamingDataSource {
+class TwitterStreamingDataSource: TwitterStreamingDataSourceProtocol{
 
     let twitterStreamingService: TwitterStreamingService
+    var datasourceCallback: TwitterStreamingDataSourceCallback?
 
     init(twitterStreamingService: TwitterStreamingService) {
         self.twitterStreamingService = twitterStreamingService
+        self.twitterStreamingService.streamingServiceCallback = {
+            (filterModels) in
+            var filterViewModelsArray = [FilterViewModel]()
+            for filterModel in filterModels {
+                filterViewModelsArray.append(FilterViewModel(filterModel: filterModel))
+            }
+            self.datasourceCallback?(filterViewModelsArray)
+        }
     }
 
-    func fetchStream(trackQuery: String, twitterStreamingDataSourceCallback: @escaping TwitterStreamingDataSourceCallback)  {
+//    func fetchStream(trackQuery: String, twitterStreamingDataSourceCallback: @escaping TwitterStreamingDataSourceCallback)  {
+//        let parameters = ["track": trackQuery]
+//        twitterStreamingService.throttledStreaming(parameters: parameters)
+//            { (filterModels) in
+//                var filterViewModelsArray = [FilterViewModel]()
+//                for filterModel in filterModels {
+//                    filterViewModelsArray.append(FilterViewModel(filterModel: filterModel))
+//                }
+//                twitterStreamingDataSourceCallback(filterViewModelsArray)
+//        }
+//    }
+
+    func fetchStream(trackQuery: String) {
         let parameters = ["track": trackQuery]
-        twitterStreamingService.startStreaming(parameters: parameters)
-            { (filterModels) in
-                var filterViewModelsArray = [FilterViewModel]()
-                for filterModel in filterModels {
-                    filterViewModelsArray.append(FilterViewModel(filterModel: filterModel))
-                }
-                twitterStreamingDataSourceCallback(filterViewModelsArray)
-        }
+        twitterStreamingService.throttledStreaming(parameters: parameters)
     }
 }
