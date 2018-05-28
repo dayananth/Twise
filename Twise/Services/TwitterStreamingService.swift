@@ -12,9 +12,9 @@ typealias TwitterStreamingServiceProgressCallback = ([FilterModel]) -> Void
 class TwitterStreamingService {
 
     var streamingService: StreamingService?
-    let authenticationService: AuthenticationService
+    let authenticationService: AuthenticationServiceProtocol
 
-    init(authenticationService: AuthenticationService) {
+    init(authenticationService: AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
 //        let authenticatedClient = authenticationService.authenticatedClient()
 //        authenticatedClient.constructRequest(.POST, requestURL: BaseURL.twitterStreamBaseURL + "/1.1/statuses/filter.json",, parameters: <#T##Dictionary<String, String>#>)
@@ -22,10 +22,14 @@ class TwitterStreamingService {
     }
 
     func startStreaming(parameters: Dictionary<String, String>, twitterStreamingServiceProgressCallBack: @escaping TwitterStreamingServiceProgressCallback) {
-        _ = streamingService?.closeConnection()
-        let authenticatedClient = authenticationService.authenticatedClient()
+
+        guard let authenticatedClient = authenticationService.authenticatedClient() else {
+            // Error Handling
+            return
+        }
         let request = authenticatedClient.constructRequest(.POST, requestURL: BaseURL.twitterStreamBaseURL + "/1.1/statuses/filter.json", parameters: parameters)
 
+        _ = streamingService?.closeConnection()
         streamingService = StreamingService(request)
         _ = streamingService?.progress({ (data) in
             do {

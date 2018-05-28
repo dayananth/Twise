@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
+        self.view.backgroundColor = .white
         let button = UIButton()
         button.setTitle("Twitter OAuth", for: .normal)
         button.setTitleColor(UIColor.blue, for: .normal)

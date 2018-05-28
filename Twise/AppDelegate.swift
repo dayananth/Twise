@@ -13,10 +13,18 @@ import OAuthSwift
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    lazy var middleWare:Middleware = {
+        return Middleware(window: self.window)
+    }()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+//        self.window?.rootViewController = ViewController(nibName: nil, bundle: nil)
+//        self.window?.makeKeyAndVisible()
+
+        middleWare.appStarted()
         return true
     }
 

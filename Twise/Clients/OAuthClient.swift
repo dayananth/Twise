@@ -30,7 +30,7 @@ enum Method: String {
 
 enum BaseURL {
     static let twitterStreamBaseURL = "https://stream.twitter.com"
-    static let twitterAPIBaseURL = "https://api.twitter.com/"
+    static let twitterAPIBaseURL = "https://api.twitter.com"
 }
 
 protocol OAuthClientProtocol {

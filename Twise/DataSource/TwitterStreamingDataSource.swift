@@ -8,6 +8,10 @@
 
 typealias TwitterStreamingDataSourceCallback = ([FilterViewModel]) -> Void
 
+protocol TwitterStreamingDataSourceProtocol {
+    func fetchStream(trackQuery: String, twitterStreamingDataSourceCallback: @escaping TwitterStreamingDataSourceCallback)
+}
+
 class TwitterStreamingDataSource {
 
     let twitterStreamingService: TwitterStreamingService

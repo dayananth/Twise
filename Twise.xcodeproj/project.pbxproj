@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C33622920B9BCC400C11DEC /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C33622820B9BCC400C11DEC /* Middleware.swift */; };
+		0C33622D20BB02AD00C11DEC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C33622C20BB02AD00C11DEC /* LoginViewController.swift */; };
+		0C33623020BB02E600C11DEC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C33622F20BB02E600C11DEC /* LoginViewModel.swift */; };
+		0C33623220BB78F000C11DEC /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C33623120BB78F000C11DEC /* FeedViewController.swift */; };
+		0C33623520BB7AC600C11DEC /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C33623420BB7AC600C11DEC /* FeedView.swift */; };
 		0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49283920B848A8002852CC /* OAuthClient.swift */; };
 		0C49283D20B84CED002852CC /* StreamingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C49283C20B84CED002852CC /* StreamingService.swift */; };
 		0CAFD6D220B99B6400F4D344 /* TwitterStreamingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6D120B99B6400F4D344 /* TwitterStreamingService.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C33622820B9BCC400C11DEC /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		0C33622C20BB02AD00C11DEC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0C33622F20BB02E600C11DEC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		0C33623120BB78F000C11DEC /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		0C33623420BB7AC600C11DEC /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		0C49283920B848A8002852CC /* OAuthClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthClient.swift; sourceTree = "<group>"; };
 		0C49283C20B84CED002852CC /* StreamingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingService.swift; sourceTree = "<group>"; };
 		0CAFD6D120B99B6400F4D344 /* TwitterStreamingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterStreamingService.swift; sourceTree = "<group>"; };
@@ -80,6 +90,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C33622720B9BC7100C11DEC /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				0C33622820B9BCC400C11DEC /* Middleware.swift */,
+			);
+			path = Middleware;
+			sourceTree = "<group>";
+		};
+		0C33622B20BB026F00C11DEC /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C33622C20BB02AD00C11DEC /* LoginViewController.swift */,
+				0C33623120BB78F000C11DEC /* FeedViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0C33623320BB7A4B00C11DEC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C33623420BB7AC600C11DEC /* FeedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0C49283820B8485D002852CC /* Clients */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +152,7 @@
 		0CAFD6DB20B9ABD400F4D344 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0C33622F20BB02E600C11DEC /* LoginViewModel.swift */,
 				0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */,
 			);
 			path = ViewModels;
@@ -145,6 +181,9 @@
 		0CD2F0D720B6F4A40031512C /* Twise */ = {
 			isa = PBXGroup;
 			children = (
+				0C33623320BB7A4B00C11DEC /* Views */,
+				0C33622B20BB026F00C11DEC /* ViewControllers */,
+				0C33622720B9BC7100C11DEC /* Middleware */,
 				0CAFD6DB20B9ABD400F4D344 /* ViewModels */,
 				0CAFD6D820B9AA8E00F4D344 /* DataSource */,
 				0CAFD6D520B9A3F400F4D344 /* Models */,
@@ -356,15 +395,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C33623520BB7AC600C11DEC /* FeedView.swift in Sources */,
 				0C49283D20B84CED002852CC /* StreamingService.swift in Sources */,
 				0CAFD6DD20B9ABFB00F4D344 /* FilterViewModel.swift in Sources */,
 				0C49283A20B848A8002852CC /* OAuthClient.swift in Sources */,
 				0CAFD6D220B99B6400F4D344 /* TwitterStreamingService.swift in Sources */,
 				0CAFD6D420B99D1700F4D344 /* AuthenticationService.swift in Sources */,
+				0C33622920B9BCC400C11DEC /* Middleware.swift in Sources */,
 				0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */,
 				0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */,
+				0C33623020BB02E600C11DEC /* LoginViewModel.swift in Sources */,
 				0CAFD6D720B9A41900F4D344 /* FilterModel.swift in Sources */,
 				0CAFD6DA20B9AAB100F4D344 /* TwitterStreamingDataSource.swift in Sources */,
+				0C33623220BB78F000C11DEC /* FeedViewController.swift in Sources */,
+				0C33622D20BB02AD00C11DEC /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
