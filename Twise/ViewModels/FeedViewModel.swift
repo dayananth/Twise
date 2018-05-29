@@ -9,10 +9,14 @@ import Foundation
 
 class FeedViewModel {
 
+//    private static let TEST_TRENDING_STRING = "twitter"
+    private static let headerTitlePrefix = "Search Keyword: "
+
     var twitterStreamingDatasource: TwitterStreamingDataSourceProtocol
     let router: Router
     let feedLimit = 5
     var filterViewModelsBinder: ViewModelBinder<[FilterViewModel]>?
+    var headerTitle: ViewModelBinder<String>? = ViewModelBinder("")
 
     let numberOfSections = 1
 
@@ -29,11 +33,12 @@ class FeedViewModel {
     }
 
     func viewLoaded() {
-        let TEST_TRENDING_STRING = "twitter"
-        self.twitterStreamingDatasource.fetchStream(trackQuery: TEST_TRENDING_STRING)
+//        headerTitle = ViewModelBinder(FeedViewModel.headerTitlePrefix + FeedViewModel.TEST_TRENDING_STRING)
+//        self.twitterStreamingDatasource.fetchStream(trackQuery: FeedViewModel.TEST_TRENDING_STRING)
     }
 
     func processNewFilterViewModels(newFilterViewModels: [FilterViewModel]) {
+
         let existingViewModelsCount = filterViewModels.count
         var toDelete = feedLimit - existingViewModelsCount - newFilterViewModels.count
         toDelete = toDelete >= 0 ? 0 : (toDelete * -1)
@@ -54,13 +59,15 @@ class FeedViewModel {
         newBatch.append(contentsOf: filterViewModels)
 
         self.filterViewModels = newBatch
-
-        self.onNewFilterViewModelsArrived?(indexPathsToDelete, indexPathsToInsert)
+        if self.filterViewModels.count > 0 {
+            self.onNewFilterViewModelsArrived?(indexPathsToDelete, indexPathsToInsert)
+        }
     }
 
     func didSearchKeywordUpdate(_ newSearchText: String) {
         self.filterViewModels = []
         self.onNewFilterViewModelsArrived?([], [])
+        headerTitle?.value = FeedViewModel.headerTitlePrefix + newSearchText
         self.twitterStreamingDatasource.fetchStream(trackQuery: newSearchText)
     }
 

@@ -83,6 +83,7 @@ class FeedViewController: UIViewController {
 
     private func setupFeedListView() {
         feedListView.register(FeedView.self, forCellWithReuseIdentifier: "FeedView")
+        feedListView.register(FeedHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "FeedHeaderView")
         self.view.addSubview(feedListView)
         feedListView.backgroundColor = UIColor(red: 240/255, green: 242/255, blue: 245/255, alpha: 1.0)
         feedListView.translatesAutoresizingMaskIntoConstraints = false
@@ -92,6 +93,8 @@ class FeedViewController: UIViewController {
         setupFeedListConstraints()
         feedListView.reloadData()
     }
+
+
 
     private func setupFeedListConstraints() {
         feedListView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 8.0).isActive = true
@@ -113,7 +116,7 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedViewModel.feedLimit
+        return feedViewModel.filterViewModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -129,11 +132,26 @@ extension FeedViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return feedViewModel.numberOfSections
     }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionElementKindSectionHeader,
+            let feedHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "FeedHeaderView", for: indexPath) as? FeedHeaderView {
+            feedHeaderView.viewModel = self.feedViewModel
+            return feedHeaderView
+        }
+
+        return UICollectionReusableView()
+
+    }
 }
 
 extension FeedViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width, height: 100)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40)
     }
 }
 

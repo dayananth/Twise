@@ -27,9 +27,6 @@ class TwitterStreamingService {
     init(authenticationService: AuthenticationServiceProtocol) {
         self.authenticationService = authenticationService
         self.lastProcessedBatch = Date().timeIntervalSince1970 - 2
-//        let authenticatedClient = authenticationService.authenticatedClient()
-//        authenticatedClient.constructRequest(.POST, requestURL: BaseURL.twitterStreamBaseURL + "/1.1/statuses/filter.json",, parameters: <#T##Dictionary<String, String>#>)
-//        streamingService = StreamingService( )
     }
 
     func startStreaming(parameters: Dictionary<String, String>) {
@@ -53,7 +50,6 @@ class TwitterStreamingService {
                     let filterModel = FilterModel(json: json)
                     filterModelsArray.append(filterModel)
                 }
-//                twitterStreamingServiceProgressCallBack(filterModelsArray)
                 self.filterModelsQueue.append(contentsOf: filterModelsArray)
 
             } catch _ as NSError {
@@ -72,7 +68,6 @@ class TwitterStreamingService {
             self.lastProcessedBatch = now
             self.streamingServiceCallback?(slice)
             self.filterModelsQueue.removeAll()
-//            return
         }
 
         let interval = DispatchTime.now() + Double(Int64(TwitterStreamingServiceConstants.updateInterval * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)

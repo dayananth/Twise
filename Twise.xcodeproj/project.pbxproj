@@ -21,6 +21,7 @@
 		0CAFD6DD20B9ABFB00F4D344 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */; };
 		0CCC198120BC514C001B0E16 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC198020BC514C001B0E16 /* FeedViewModel.swift */; };
 		0CCC198420BC529A001B0E16 /* ViewModelBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC198320BC529A001B0E16 /* ViewModelBinder.swift */; };
+		0CCC198620BD10CE001B0E16 /* FeedHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CCC198520BD10CE001B0E16 /* FeedHeaderView.swift */; };
 		0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0D820B6F4A40031512C /* AppDelegate.swift */; };
 		0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DA20B6F4A40031512C /* ViewController.swift */; };
 		0CD2F0DE20B6F4A40031512C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD2F0DC20B6F4A40031512C /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		0CAFD6DC20B9ABFB00F4D344 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		0CCC198020BC514C001B0E16 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		0CCC198320BC529A001B0E16 /* ViewModelBinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelBinder.swift; sourceTree = "<group>"; };
+		0CCC198520BD10CE001B0E16 /* FeedHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedHeaderView.swift; sourceTree = "<group>"; };
 		0CD2F0D520B6F4A40031512C /* Twise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Twise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD2F0D820B6F4A40031512C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD2F0DA20B6F4A40031512C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0C33623420BB7AC600C11DEC /* FeedView.swift */,
+				0CCC198520BD10CE001B0E16 /* FeedHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				0CD2F0DB20B6F4A40031512C /* ViewController.swift in Sources */,
 				0CD2F0D920B6F4A40031512C /* AppDelegate.swift in Sources */,
 				0C33623020BB02E600C11DEC /* LoginViewModel.swift in Sources */,
+				0CCC198620BD10CE001B0E16 /* FeedHeaderView.swift in Sources */,
 				0CAFD6D720B9A41900F4D344 /* FilterModel.swift in Sources */,
 				0CAFD6DA20B9AAB100F4D344 /* TwitterStreamingDataSource.swift in Sources */,
 				0C33623220BB78F000C11DEC /* FeedViewController.swift in Sources */,

@@ -37,7 +37,6 @@ class FeedView: UICollectionViewCell {
         textLabel.numberOfLines = 0
         addSubview(imageView)
         addSubview(textLabel)
-        textLabel.text = "Loream and ipsum"
         NSLayoutConstraint.activate([
             imageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8.0),
             imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 8.0),
