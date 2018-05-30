@@ -10,7 +10,7 @@ import SwiftyJSON
 typealias TwitterStreamingServiceProgressCallback = ([FilterModel]) -> Void
 
 enum TwitterStreamingServiceConstants {
-    static let updateInterval: TimeInterval = 3
+    static let updateInterval: TimeInterval = 1.25
     static let batchLimit: Int = 1
 }
 

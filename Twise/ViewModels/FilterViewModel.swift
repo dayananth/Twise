@@ -8,7 +8,16 @@
 
 import UIKit
 
-class FilterViewModel {
+protocol FilterViewModelProtocol: class {
+
+    /// Twitter post text
+    var text: String {get}
+
+    /// Profile URL
+    var imageURL: String {get}
+}
+
+class FilterViewModel: FilterViewModelProtocol {
 
     let text: String
 

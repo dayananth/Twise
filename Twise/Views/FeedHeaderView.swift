@@ -11,9 +11,9 @@ import UIKit
 class FeedHeaderView: UICollectionReusableView {
 
     let headerTextLabel =  UILabel()
-    var viewModel: FeedViewModel? {
+    var viewModel: FeedViewModelProtocol? {
         didSet {
-            viewModel?.headerTitle?.bind = { (keyword) in
+            viewModel?.headerTitleBinder.bind = { (keyword) in
                 self.headerTextLabel.text = keyword
             }
         }
@@ -38,7 +38,7 @@ class FeedHeaderView: UICollectionReusableView {
             self.headerTextLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             self.headerTextLabel.topAnchor.constraint(equalTo: self.topAnchor)
         ])
-        self.headerTextLabel.text = "Search a keyword"
+        self.headerTextLabel.text = "Search a keyword in the above text box"
         self.headerTextLabel.textColor = .black
     }
 

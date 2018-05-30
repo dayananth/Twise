@@ -8,7 +8,20 @@
 
 import UIKit
 
-class LoginViewModel {
+protocol LoginViewModelProtocol: class {
+
+    /// Title to be shown on the login button
+    var buttonTitle: String {get}
+
+    /// Information to show for login
+    var labelTitle: String {get}
+
+    /// On tapping the login button
+    func didTapLoginButton()
+
+}
+
+class LoginViewModel: LoginViewModelProtocol {
 
     let authenticationService: AuthenticationServiceProtocol
     let router: Router

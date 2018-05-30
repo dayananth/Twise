@@ -13,10 +13,11 @@ class FeedViewController: UIViewController {
     private let feedListView: UICollectionView
     private let collectionViewFlowLayout: UICollectionViewFlowLayout
     private let searchBox: UITextField
-    private var feedViewModel: FeedViewModel
+    private var feedViewModel: FeedViewModelProtocol
+    private var filterViewModels = [FilterViewModelProtocol]()
     private let searchBoxContainer = UIView()
 
-    init(feedViewModel: FeedViewModel) {
+    init(feedViewModel: FeedViewModelProtocol) {
         collectionViewFlowLayout = UICollectionViewFlowLayout()
         collectionViewFlowLayout.scrollDirection = .vertical
         collectionViewFlowLayout.minimumLineSpacing = 4.0
@@ -24,7 +25,10 @@ class FeedViewController: UIViewController {
         searchBox = UITextField(frame: .zero)
         self.feedViewModel = feedViewModel
         super.init(nibName: nil, bundle: nil)
-        self.feedViewModel.onNewFilterViewModelsArrived = updateCollectionView
+        self.feedViewModel.filterViewModelsBinder.bind = { (filterViewModels) in
+            self.filterViewModels = filterViewModels
+            self.feedListView.reloadData()
+        }
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -116,13 +120,13 @@ class FeedViewController: UIViewController {
 
 extension FeedViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return feedViewModel.filterViewModels.count
+        return filterViewModels.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let feedViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedView", for: indexPath) as? FeedView {
-            if indexPath.row < feedViewModel.filterViewModels.count {
-                feedViewCell.viewModel = feedViewModel.filterViewModels[indexPath.row]
+            if indexPath.row < filterViewModels.count {
+                feedViewCell.viewModel = filterViewModels[indexPath.row]
             }
             return feedViewCell
         }

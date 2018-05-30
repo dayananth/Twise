@@ -13,7 +13,7 @@ class FeedView: UICollectionViewCell {
     private let imageView =  UIImageView()
     private let textLabel = UILabel()
 
-    var viewModel: FilterViewModel? {
+    var viewModel: FilterViewModelProtocol? {
         didSet {
             updateUI()
         }
